@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<script src="angular-1.5.8/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div ng-controller="myCtrl">
+			名：<input type="text" ng-model="firstName" /><br /> 姓：
+			<input type="text" ng-model="lastName" /><br />
+			<br /> 姓名：{{firstName + " " + lastName}}
+			<!--AngularJS中的对象和JS中的对象很相似-->
+			<div ng-init="person={firstName:'John',lastName:'Doe'}">
+				<p>姓为 {{ person.lastName }}</p>
+			</div>
+		</div>
+
+		<!--类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。
+与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。
+与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。
+与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。-->
+		<script type="text/javascript">
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.firstName = "John";
+				$scope.lastName = "Doe";
+			});
+		</script>
+	</body>
+
+</html>
